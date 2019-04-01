@@ -3,6 +3,12 @@
 #' @param ns The target size
 #' @return The fine-scale field with dimensions `c(ns, ns)`
 #' @export
+#' @examples
+#' za <- rnorm(4 * 4)
+#' dim(za) <- c(4, 4)
+#' z <- interpola(z, 16)
+#' dim(z)
+#' # [1] 16 16
 interpola <- function(z, ns) {
   nas <- dim(z)[1]
   sdim <- ns / nas

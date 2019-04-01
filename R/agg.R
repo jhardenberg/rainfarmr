@@ -3,6 +3,12 @@
 #' @param nas The target dimension for the output field
 #' @return The coarse field obtained by box averaging
 #' @export
+#' @examples
+#' z <- rnorm(64 * 64)
+#' dim(z) <- c(64, 64)
+#' za <- agg(z, 4)
+#' dim(za)
+#'   [1] 4 4
 agg <- function(zi, nas) {
   ns <- dim(zi)[1]
   sdim <- ns / nas

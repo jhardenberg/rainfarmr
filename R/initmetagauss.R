@@ -3,6 +3,8 @@
 #' The convention is that this is the slope of `k*|A(k)|^2`
 #' @param ns Size of the output field
 #' @return Output field with specified spectral slope
+#' @examples
+#' f = initmetagauss(1.7, 64)
 initmetagauss <- function(sx, ns) {
     sx <- abs(sx)
     kx <- rep(c(0:(ns / 2), (- ns / 2 + 1):-1), ns)

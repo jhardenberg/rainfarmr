@@ -3,7 +3,7 @@
 #' @param r The fine field
 #' @param kmax Maximum wavenumber to use (default nas/2)
 #' @return The merged field
-mergespec <- function(ra, r, kmax=0) {
+mergespec <- function(ra, r, kmax = 0) {
   nx <- dim(r)[1]
   nax <- dim(ra)[1]
   nax2 <- nax / 2

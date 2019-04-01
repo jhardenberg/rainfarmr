@@ -8,7 +8,27 @@
 #' @param fsmooth Logical to use smoothing instead of gridpoint conservation.
 #' @return The downscaled field.
 #' @import stats
-downscale <- function(r, f, weights=1., fglob=FALSE, fsmooth=FALSE) {
+#' @examples
+#' # Make some sample synthetic rainfall data
+#' r <- exp(rnorm(4 * 4))
+#' dim(r) <- c(4, 4)
+#' r
+#' #           [,1]      [,2]      [,3]      [,4]
+#' # [1,] 1.8459816 1.8536550 2.1600665 1.3102116
+#' # [2,] 1.3851011 1.4647348 0.2708219 0.4571810
+#' # [3,] 0.2492451 0.8227134 0.4790567 1.9320403
+#' # [4,] 0.5985922 3.3065678 2.1282795 0.6849944
+#' # Create help field `f` with logarithmic slope 1.7 with `dim(f) = c(8 * 4 ,8 * 4)`
+#' f <- initmetagauss(1.7, 8 * 4)
+#' rd <- downscale(r, f, fsmooth=FALSE) 
+#' # Verify that downscaled data maintained original box averages
+#' agg(rd, 4) 
+#' #           [,1]      [,2]      [,3]      [,4]
+#' # [1,] 1.8459816 1.8536550 2.1600665 1.3102116
+#' # [2,] 1.3851011 1.4647348 0.2708219 0.4571810
+#' # [3,] 0.2492451 0.8227134 0.4790567 1.9320403
+#' # [4,] 0.5985922 3.3065678 2.1282795 0.6849944
+downscale <- function(r, f, weights = 1., fglob = FALSE, fsmooth = TRUE) {
   nas <- dim(r)[1]
   ns <- dim(f)[1]
   r[r < 0] <- 0.

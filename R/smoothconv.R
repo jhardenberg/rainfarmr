@@ -4,6 +4,12 @@
 #' @param nas The smoothing kernel uses a radius `(ns/nas)/2`
 #' @return The smoothened field.
 #' @export
+#' @examples
+#' z <- rnorm(64 * 64)
+#' dim(z) <- c(64, 64)
+#' zs <- smoothconv(z, 8)
+#' sd(zs)
+#' # [1] 0.07910996
 smoothconv <- function(zi, nas) {
   imask <- !is.finite(zi)
   zi[imask] <- 0.

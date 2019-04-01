@@ -2,6 +2,12 @@
 #' @param z The input field with dimensions `c(N, N)`
 #' @return Spectral power (square of absolute value of amplitudes) for `k=1:N/2`.
 #' @export
+#' f = initmetagauss(1.7, 64)
+#' z = metagauss(f)
+#' fx <- fft2d(z)
+#' sx <- fitslope(fx)
+#' print(sx)
+#' # 1.640373
 fft2d <- function(z) {
   ns <- dim(z)[1]
   ns2 <- floor(ns / 2)

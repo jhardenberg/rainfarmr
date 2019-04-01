@@ -10,9 +10,28 @@
 #' @param verbose Logical to provide some progress report.
 #' @return The downscaled array.
 #' @export
+#' @examples
+#' # Make some sample synthetic rainfall data
+#' r <- exp(rnorm(4 * 4 * 10))
+#' dim(r) <- c(4, 4, 10)
+#' r[ , , 1]
+#' #           [,1]      [,2]      [,3]      [,4]
+#' # [1,] 1.8459816 1.8536550 2.1600665 1.3102116
+#' # [2,] 1.3851011 1.4647348 0.2708219 0.4571810
+#' # [3,] 0.2492451 0.8227134 0.4790567 1.9320403
+#' # [4,] 0.5985922 3.3065678 2.1282795 0.6849944
+#' # Downscale with spectral slope=1.7 to size 32x32
+#' rd <- rainfarm(r, 1.7, 8, fsmooth=FALSE) 
+#' # Verify that downscaled data maintained original box averages
+#' agg(rd[ , , 1], 4) 
+#' #           [,1]      [,2]      [,3]      [,4]
+#' # [1,] 1.8459816 1.8536550 2.1600665 1.3102116
+#' # [2,] 1.3851011 1.4647348 0.2708219 0.4571810
+#' # [3,] 0.2492451 0.8227134 0.4790567 1.9320403
+#' # [4,] 0.5985922 3.3065678 2.1282795 0.6849944
 
-rainfarm <- function(r, slope, nf, weights=1.,
-                     fglob=FALSE, fsmooth=FALSE, verbose=FALSE) {
+rainfarm <- function(r, slope, nf, weights = 1.,
+                     fglob = FALSE, fsmooth = TRUE, verbose = FALSE) {
   drop=FALSE
   nax <- dim(r)[1]
   nay <- dim(r)[2]
@@ -21,6 +40,7 @@ rainfarm <- function(r, slope, nf, weights=1.,
     drop=TRUE
     nt <- 1
   }
+  dim(r) <- c(nax, nay, nt)
 
   if ( nax == nay ) {
     nas <- nax
