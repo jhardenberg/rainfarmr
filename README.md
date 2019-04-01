@@ -1,7 +1,7 @@
 # rainfarmr
 ![RainFARM logo](https://raw.githubusercontent.com/jhardenberg/RainFARM.jl/master/docs/src/assets/logo-small.png)
 
-R library implementing the RainFARM stochastic precipitation downscaling method.
+Stochastic precipitation downscaling with the RainFARM method.
 
 `rainfarmr` is a R package implementing the RainFARM (Rainfall Filtered Autoregressive Model) stochastic precipitation downscaling method. Adapted for climate downscaling according to (D'Onofrio et al. 2018) and with fine-scale orographic weights (Terzago et al. 2018).
 
