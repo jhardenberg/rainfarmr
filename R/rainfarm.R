@@ -12,11 +12,13 @@
 #' @export
 
 rainfarm <- function(r, slope, nf, weights=1.,
-                     fglob=FALSE, fsmooth=FALSE, verbose=FALSE, drop=TRUE) {
+                     fglob=FALSE, fsmooth=FALSE, verbose=FALSE) {
+  drop=FALSE
   nax <- dim(r)[1]
   nay <- dim(r)[2]
   nt <- dim(r)[3]
   if ( is.na(nt) ) {
+    drop=TRUE
     nt <- 1
   }
 

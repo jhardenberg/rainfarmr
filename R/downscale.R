@@ -7,6 +7,7 @@
 #' @param fglob Logical to conserve global average over domain.
 #' @param fsmooth Logical to use smoothing instead of gridpoint conservation.
 #' @return The downscaled field.
+#' @import stats
 downscale <- function(r, f, weights=1., fglob=FALSE, fsmooth=FALSE) {
   nas <- dim(r)[1]
   ns <- dim(f)[1]
