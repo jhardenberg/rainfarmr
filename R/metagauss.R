@@ -1,7 +1,11 @@
-#' Generate a metagaussian field multiplying the spectral field `f`
+#' Generate a metagaussian field
 #' with random phases and performing an inverse FFT transform to real space.
-#' @param f Input field generated with the `initmetagauss()`function.
-#' @return The input field with random Fourier phases
+#' @description Random Fourier phases are added to the input spectrum `f` and 
+#' an inverse FFT transform to real space is performed.
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param f matrix with complex spectral amplitudes generated with the `initmetagauss()`function.
+#' @return A metagaussian field with random Fourier phases.
+#' @export
 #' @examples
 #' f = initmetagauss(1.7, 64)
 #' z = metagauss(f)

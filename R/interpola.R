@@ -1,12 +1,14 @@
-#' Interpolate field `z` to size `(ns,ns)` using nearest neighbors.
-#' @param z The input field at coarse resolution
-#' @param ns The target size
-#' @return The fine-scale field with dimensions `c(ns, ns)`
+#' Interpolate field using nearest neighbors.
+#' @description A field at finer resolution is generated using nearest neighbours.
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param z matrix containing the input field at coarse resolution.
+#' @param ns the target size.
+#' @return The resulting fine-scale field with dimensions `c(ns, ns)`.
 #' @export
 #' @examples
 #' za <- rnorm(4 * 4)
 #' dim(za) <- c(4, 4)
-#' z <- interpola(z, 16)
+#' z <- interpola(za, 16)
 #' dim(z)
 #' # [1] 16 16
 interpola <- function(z, ns) {

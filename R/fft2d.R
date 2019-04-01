@@ -1,7 +1,11 @@
-#' Compute spatial Fourier spectrum of field averaged over shells in modulus of wavenumber
-#' @param z The input field with dimensions `c(N, N)`
-#' @return Spectral power (square of absolute value of amplitudes) for `k=1:N/2`.
+#' Compute spatial Fourier power spectrum of field
+#' @description The Fourier power spectrum of the input field is computed and
+#' averaged over shells in modulus of wavenumber of width `dk=1`
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param z matrix containing the input field with dimensions `c(N, N)`.
+#' @return Spectral power (square of absolute value of spectral amplitudes) for `k=1:N/2`.
 #' @export
+#' @examples
 #' f = initmetagauss(1.7, 64)
 #' z = metagauss(f)
 #' fx <- fft2d(z)

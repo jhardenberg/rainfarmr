@@ -1,8 +1,9 @@
 #' Interpolate longitude and latitude vectors to higher resolution by a factor `nf`.
-#' @param lon Vector of longitudes
-#' @param lat Vector of latitudes
-#' @param nf Factor by which to increase resolution
-#' @return List with elements `lon` and `lat` at resolution increased by factor `nf`
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param lon vector of longitudes.
+#' @param lat vector of latitudes.
+#' @param nf factor by which to increase resolution.
+#' @return List with elements `lon` and `lat` with resolution increased by factor `nf`.
 #' @export
 #' @import utils
 #' @examples
@@ -16,7 +17,6 @@
 #' grid$lat
 #' #  [1] 42.625 42.875 43.125 43.375 43.625 43.875 44.125 44.375 44.625 44.875
 #' # [11] 45.125 45.375 45.625 45.875 46.125 46.375 46.625 46.875 47.125 47.375
-
 lon_lat_fine <- function(lon, lat, nf) {
 
   nlon <- length(lon)

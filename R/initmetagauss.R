@@ -1,8 +1,12 @@
 #' Generate the spectral amplitudes for a metagaussian field
-#' @param sx Spectral slope for the output field.
-#' The convention is that this is the slope of `k*|A(k)|^2`
-#' @param ns Size of the output field
-#' @return Output field with specified spectral slope
+#' @description A Fourier spectrum with prescribed logarithimic slope and zero phases
+#' is constructed.
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param sx spectral slope for the output field.
+#' The convention is that this is the slope of `k*|A(k)|^2`.
+#' @param ns size of the output field.
+#' @return Output field with specified spectral slope with dimensions `c(ns, ns)`.
+#' @export
 #' @examples
 #' f = initmetagauss(1.7, 64)
 initmetagauss <- function(sx, ns) {

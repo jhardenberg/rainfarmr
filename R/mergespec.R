@@ -1,8 +1,10 @@
-#' Spectral merging of coarse field `ra` and fine field `r` at wavenumber `kmax`.
-#' @param ra The coarse field of size `c(nas, nas)`
-#' @param r The fine field
-#' @param kmax Maximum wavenumber to use (default nas/2)
-#' @return The merged field
+#' Spectral merging of coarse field and fine field at a given wavenumber
+#' @description The Fourier spectra of the input fields are merged at wavenumber `kmax`.
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param ra matrix containing a coarse field of size `c(nas, nas)`.
+#' @param r matrix containing a field at higher resolution.
+#' @param kmax wavenumber to use for merging (default nas/2).
+#' @return The merged field.
 mergespec <- function(ra, r, kmax = 0) {
   nx <- dim(r)[1]
   nax <- dim(ra)[1]

@@ -1,7 +1,9 @@
-#' Smoothen field with a circular kernel using convolution.
+#' Smoothen field with a circular kernel using convolution
+#' @description The input field is convolving it with a circular kernel with equal weights.
 #' Takes into account missing values.
-#' @param zi The input field to smoothen, with dimensions `c(ns, ns)`
-#' @param nas The smoothing kernel uses a radius `(ns/nas)/2`
+#' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
+#' @param z matrix with the input field to smoothen, with dimensions `c(ns, ns)`
+#' @param nas the smoothing kernel uses a radius `(ns/nas)/2`
 #' @return The smoothened field.
 #' @export
 #' @examples
@@ -10,10 +12,10 @@
 #' zs <- smoothconv(z, 8)
 #' sd(zs)
 #' # [1] 0.07910996
-smoothconv <- function(zi, nas) {
-  imask <- !is.finite(zi)
-  zi[imask] <- 0.
-  ns <- dim(zi)[1]
+smoothconv <- function(z, nas) {
+  imask <- !is.finite(z)
+  z[imask] <- 0.
+  ns <- dim(z)[1]
 
   sdim <- (ns / nas) / 2  # the smoothing sigma has width half a large pixel
   mask <- matrix(0., ns, ns)
@@ -32,10 +34,10 @@ smoothconv <- function(zi, nas) {
     }
   }
   fm <- fft(mask)
-  zf <- Re(fft(fm * fft(zi), inverse = TRUE)) / sum(mask) / length(fm)
+  zf <- Re(fft(fm * fft(z), inverse = TRUE)) / sum(mask) / length(fm)
   if (sum(imask) > 0) {
-           zi[!imask] <- 1.0
-           zf <- zf / (Re(fft(fm * fft(zi), inverse = TRUE)) /
+           z[!imask] <- 1.0
+           zf <- zf / (Re(fft(fm * fft(z), inverse = TRUE)) /
                        sum(mask) / length(fm))
   }
   zf[imask] <- NA
