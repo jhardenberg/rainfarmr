@@ -1,6 +1,6 @@
 #' Gaussianize field using rank ordering
 #' @description Rank ordering is used to transform the amplitudes of the input field
-#' to samples from a Normal distribution
+#' to samples from a Normal distribution.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix containing the input field to be Gaussianized.
 #' @return The Gaussianized field with the same dimensions as the input field.

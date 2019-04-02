@@ -5,7 +5,7 @@
 #' An optional weights array can be specified.
 #' Precipitation can be conserved globally (`fglob`) or using convolution (`fsmooth`). 
 #' @references Terzago, S. et al. (2018). NHESS 18(11), 2825–2840.
-#' http://doi.org/10.5194/nhess-18-2825-2018 ,
+#' http://doi.org/10.5194/nhess-18-2825-2018 ;
 #' D'Onofrio et al. (2014), J of Hydrometeorology 15, 830-843;
 #' Rebora et. al. (2006), JHM 7, 724.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}

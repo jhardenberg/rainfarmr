@@ -1,4 +1,7 @@
-#' Interpolate longitude and latitude vectors to higher resolution by a factor `nf`.
+#' Linear interpolation of longitude and latitude vectors to higher resolution.
+#' @description Longitude and latitude vectors are interpolated to a resolution increased
+#' by a factor `nf`. The grid spacings of the first two and last two elements are used to
+#' extrapolate at the boundaries.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param lon vector of longitudes.
 #' @param lat vector of latitudes.

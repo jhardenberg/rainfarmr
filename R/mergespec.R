@@ -1,4 +1,4 @@
-#' Spectral merging of coarse field and fine field at a given wavenumber
+#' Spectral merging of a coarse field and of a fine field at a given wavenumber
 #' @description The Fourier spectra of the input fields are merged at wavenumber `kmax`.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param ra matrix containing a coarse field of size `c(nas, nas)`.
