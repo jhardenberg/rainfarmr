@@ -20,9 +20,11 @@ agg <- function(z, nas) {
   n <- matrix(0., nas, nas);
   for (i in 1:sdim) {
     for (j in 1:sdim) {
-      imask <- is.finite(z[i + rs, j + rs])
+      zz <- z[i + rs, j + rs]
+      imask <- is.finite(zz)
       n <- n + imask
-      za <- za + z[i + rs, j + rs] * imask
+      zz[!imask] <- 0.
+      za <- za + zz
     }
   }
   return(za / n)

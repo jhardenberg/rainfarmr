@@ -1,6 +1,6 @@
 #' Compute spatial Fourier power spectrum of field
 #' @description The Fourier power spectrum of the input field is computed and
-#' averaged over shells in modulus of wavenumber of width `dk=1`
+#' averaged over shells in modulus of wavenumber of width `dk=1`.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix or array containing the input field with dimensions `c(N, N)`.
 #' If `z` is an array the power spectra are averaged over the third dimension.
