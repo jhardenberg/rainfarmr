@@ -1,5 +1,4 @@
 #' Generate a metagaussian field
-#' with random phases and performing an inverse FFT transform to real space.
 #' @description Random Fourier phases are added to the input spectrum `f` and 
 #' an inverse FFT transform to real space is performed.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}

@@ -22,9 +22,6 @@
 #' # [2,] 783.5 861.0 938.5 1016.0 1093.5
 #' # [3,] 786.0 863.5 941.0 1018.5 1096.0
 remapcon <- function(x, y, z, xo, yo) {
-  if (na.rm) {
-    z[!is.finite(z)] <- 0.
-  }
   nx <- length(x)
   nxo <- length(xo)
 
@@ -86,12 +83,13 @@ remapcon <- function(x, y, z, xo, yo) {
     for (j in 1:nyo) {
       ii <- which(wx[ , i] != 0)
       jj <- which(wy[ , j] != 0)
-      zo[i, j] <- sum( z[ii, jj] * (wx[ii, i] %*% t(wy[jj, j])), na.rm = TRUE)
+      ww <- sum(z[ii, jj] * (wx[ii, i] %*% t(wy[jj, j])), na.rm = TRUE)
+      zo[i, j] <- (sum(z[ii, jj] * ww, na.rm = TRUE) /
+                   sum(is.finite(z[ii, jj]) * ww))
       if (sum(!is.finite(z[ii, jj])) == length(z[ii, jj])) {
         zo[i, j] <- NA
       }
     }
   }
-
   return(zo)
 }
