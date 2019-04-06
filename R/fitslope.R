@@ -1,4 +1,5 @@
 #' Compute logarithmic slope of a spatial spectrum
+#'
 #' @description Uses a linear fit to derive the log-log slope of a Fourier spectrum. 
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param fx vector containing input spectrum starting from `k=1`.

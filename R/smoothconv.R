@@ -1,4 +1,5 @@
 #' Smoothening using convolution with a circular kernel
+#'
 #' @description The input field is convolved with a circular kernel with equal weights.
 #' Takes into account missing values.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}

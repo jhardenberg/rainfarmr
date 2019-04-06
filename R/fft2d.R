@@ -1,4 +1,5 @@
-#' Compute spatial Fourier power spectrum of field
+#' Compute spatial Fourier power spectrum
+#'
 #' @description The Fourier power spectrum of the input field is computed and
 #' averaged over shells in modulus of wavenumber of width `dk=1`.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}

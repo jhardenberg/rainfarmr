@@ -1,5 +1,6 @@
 #' Conservative remapping
-#' @description Conservative remapping weighting with the overlap between pixels.
+#'
+#' @description Implements conservative remapping weighting with the overlap area between pixels.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param x vector of input longitudes
 #' @param y vector of input latitudes

@@ -1,0 +1,9 @@
+* using log directory ‘/Users/jost/git/rainfarmr/R/..Rcheck’
+* using R version 3.5.2 (2018-12-20)
+* using platform: x86_64-apple-darwin18.2.0 (64-bit)
+* using session charset: UTF-8
+* using option ‘--as-cran’
+* checking for file ‘./DESCRIPTION’ ... ERROR
+File DESCRIPTION does not exist
+* DONE
+Status: 1 ERROR
