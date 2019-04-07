@@ -47,7 +47,7 @@ downscale <- function(r, f, weights = 1., fglob = FALSE, fsmooth = TRUE) {
   gm <- mergespec(rg, g, nas / 2)
   st <- sd(gm)
   if (st == 0) {
-    st <- 1.i
+    st <- 1.
   }
   gm <- gm / st
   fm <- exp(gm)
