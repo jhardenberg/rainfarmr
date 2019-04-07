@@ -1,6 +1,7 @@
 #' Interpolate field using nearest neighbors
 #'
-#' @description A field at finer resolution is generated using nearest neighbour interpolation.
+#' @description Interpolates a square input matrix to a finer
+#' resolution `ns` using nearest neighbours.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix containing the input field at coarse resolution.
 #' @param ns the target size.

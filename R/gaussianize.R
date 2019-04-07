@@ -1,7 +1,8 @@
 #' Gaussianize field using rank ordering
 #'
-#' @description The amplitudes of the input field are rank ordered and substituted with
-#' the corresponding rank-ordered samples from a Normal distribution.
+#' @description The amplitudes of the input field are rank ordered and
+#' substituted with the corresponding rank-ordered samples from a
+#' Normal distribution.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix containing the input field to be Gaussianized.
 #' @return The Gaussianized field with the same dimensions as the input field.

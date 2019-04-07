@@ -1,7 +1,7 @@
 #' Smoothening using convolution with a circular kernel
 #'
-#' @description The input field is convolved with a circular kernel with equal weights.
-#' Takes into account missing values.
+#' @description The input field is convolved with a circular kernel with equal
+#' weights. Takes into account missing values.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix with the input field to smoothen, with dimensions `c(ns, ns)`
 #' @param nas the smoothing kernel uses a radius `(ns/nas)/2`

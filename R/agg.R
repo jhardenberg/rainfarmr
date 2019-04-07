@@ -1,7 +1,8 @@
 #' Aggregation using box-averaging
 #'
-#' @description Aggregates fine input field `z` to a coarse array sith dimensions
-#' `c(nas,nas)` by box averaging.
+#' @description Aggregates an input field `z` to an array at
+#' coarser resolutions `c(nas,nas)` by box averaging.
+#' The input array can contain missing values.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param z matrix containing the fine field to aggregate.
 #' @param nas target dimension for the output field.

@@ -1,26 +1,28 @@
 #' Perform RainFARM downscaling
 #'
-#' @description The input array is downscaled to finer spatial resolution using the RainFARM 
-#' stochastic precipitation downscaling method.
+#' @description The input array is downscaled to finer spatial resolution
+#' using the RainFARM stochastic precipitation downscaling method.
 #' Orographic correction weights can be applied as described in 
 #' Terzago et al. (2018) \doi{10.5194/nhess-18-2825-2018}.
-#' Precipitation can be conserved globally (`fglob`), using convolution (`fsmooth`) or 
-#' over the original coarse-scale boxes. 
+#' Precipitation can be conserved globally (`fglob`), using convolution
+#' (`fsmooth`) or over the original coarse-scale boxes. 
 #' @references Terzago, S. et al. (2018). NHESS 18(11), 2825–2840
-#' \doi{10.5194/nhess-18-2825-2018};
-#' D'Onofrio et al. (2014). J of Hydrometeorology 15, 830-843 \doi{10.1175/JHM-D-13-096.1};
+#' \doi{10.5194/nhess-18-2825-2018}; D'Onofrio et al. (2014).
+#' J of Hydrometeorology 15, 830-843 \doi{10.1175/JHM-D-13-096.1};
 #' Rebora et. al. (2006), JHM 7, 724 \doi{10.1175/JHM517.1}.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
-#' @param r matrix or array with large-scale field to downscale. Can be a three-dimensional
-#' array with multiple frames at different times.
-#' Spatial downscaling is performed separately for each element of the third dimension of `r`.
+#' @param r matrix or array with large-scale field to downscale. Can be a
+#' three-dimensional array with multiple frames at different times.
+#' Spatial downscaling is performed separately for each element of the
+#' third dimension of `r`.
 #' @param slope spatial spectral slope.
 #' @param nf refinement factor for spatial downscaling.
 #' @param weights matrix with weights for orographic downscaling generated
 #' by the [rfweights()] function.
 #' @param fglob logical to conserve global average over domain.
 #' @param fsmooth logical to use smoothing for conservation. 
-#' If neither `fsmooth` or `fglob` is set precipitation is conserved over each coarse box.
+#' If neither `fsmooth` or `fglob` is set precipitation is conserved over
+#' each coarse pixel of the input field.
 #' @param verbose logical to provide some progress report.
 #' @return The downscaled array.
 #' @export

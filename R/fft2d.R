@@ -1,12 +1,13 @@
 #' Compute spatial Fourier power spectrum
 #'
 #' @description The Fourier power spectrum of the input field is computed and
-#' averaged over shells in modulus of wavenumber of width `dk=1`.
+#' averaged over shells (bins with width 1) of the modulus of the wavenumber.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
-#' @param z matrix or array containing the input field with dimensions `c(N, N)`.
+#' @param z matrix or array of input data with spatial dimensions `c(N, N)`.
 #' If `z` is an array the power spectra are averaged over the third dimension.
 #' The first two dimensions must be the same (the input fields must be square).
-#' @return Spectral power (average square of absolute value of spectral amplitudes) for `k=1:N/2`.
+#' @return Spectral power (average square of absolute value of spectral
+#' amplitudes) for wavenumbers `k=1:(N/2)`.
 #' @export
 #' @examples
 #' # Make a synthetic rainfall field with prescribed logarithmic spectral slope

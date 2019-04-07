@@ -1,6 +1,6 @@
 #' Generate a metagaussian field
 #'
-#' @description Random Fourier phases are added to the input spectrum `f` and 
+#' @description Random Fourier phases are added to the input spectrum `f` and
 #' an inverse FFT transform to real space is performed.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param f matrix with complex spectral amplitudes generated with the

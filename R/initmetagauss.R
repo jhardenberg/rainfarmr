@@ -1,7 +1,7 @@
 #' Generate the spectral amplitudes for a metagaussian field
 #'
-#' @description A Fourier spectrum with prescribed logarithimic slope and zero phases
-#' is constructed.
+#' @description A Fourier spectrum with prescribed logarithimic slope and
+#' zero phases is constructed.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param sx spectral slope for the output field.
 #' The convention is that this is the slope of `k*|A(k)|^2`.
