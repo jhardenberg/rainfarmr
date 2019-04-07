@@ -1,6 +1,6 @@
 #' Perform RainFARM downscaling
 #'
-#' @description The input array is downscaled to finer resolution using the RainFARM 
+#' @description The input array is downscaled to finer spatial resolution using the RainFARM 
 #' stochastic precipitation downscaling method.
 #' Orographic correction weights can be applied as described in 
 #' Terzago et al. (2018) \doi{10.5194/nhess-18-2825-2018}.
