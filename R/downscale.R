@@ -1,6 +1,6 @@
-#' Downscale precipitation field
+#' Downscale a precipitation field
 #'
-#' @description Downscales input precipitation matrix using a metagaussian
+#' @description Downscales the input precipitation matrix using a metagaussian
 #' spectral field `f` of the desired resolution previously generated with [initmetagauss()].
 #' An optional weights array can be specified.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
@@ -39,11 +39,6 @@ downscale <- function(r, f, weights = 1., fglob = FALSE, fsmooth = TRUE) {
   r[r < 0] <- 0.
   rg <- gaussianize(r)
   g <- metagauss(f)
-
-  pstg <- fft2d(g) * (ns * ns) ^ 2
-  pstrg <- fft2d(rg) * (nas * nas) ^ 2
-  c <- pstrg[nas / 2] / pstg[nas / 2]
-  g <- g * sqrt(c)
 
   gm <- mergespec(rg, g, nas / 2)
   st <- sd(gm)

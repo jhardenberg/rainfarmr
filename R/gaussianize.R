@@ -7,9 +7,11 @@
 #' @return The Gaussianized field with the same dimensions as the input field.
 #' @export
 #' @examples
-#' z <- rnorm(64 * 64)
-#' dim(z) <- c(64, 64)
-#' g <- gaussianize(z)
+#' # Make some sample synthetic rainfall data
+#' r <- exp(rnorm(64 * 64))
+#' dim(r) <- c(64, 64)
+#' # Gaussianize and check standard deviation
+#' g <- gaussianize(r)
 #' sd(g)
 #' # [1] 1
 gaussianize <- function(z) {

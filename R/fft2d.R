@@ -9,11 +9,12 @@
 #' @return Spectral power (average square of absolute value of spectral amplitudes) for `k=1:N/2`.
 #' @export
 #' @examples
+#' # Make a synthetic rainfall field with prescribed logarithmic spectral slope
 #' f = initmetagauss(1.7, 64)
-#' z = metagauss(f)
-#' fx <- fft2d(z)
-#' sx <- fitslope(fx)
-#' print(sx)
+#' r = metagauss(f)
+#' # Check slope of the resulting field
+#' fx <- fft2d(r)
+#' fitslope(fx)
 #' # 1.640373
 fft2d <- function(z) {
   ns <- dim(z)[1]

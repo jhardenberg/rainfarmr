@@ -5,7 +5,23 @@
 #' @param ra matrix containing a coarse field of size `c(nas, nas)`.
 #' @param r matrix containing a field at higher resolution.
 #' @param kmax wavenumber to use for merging (default `nas/2`).
-#' @return The merged field.
+#' @return The merged field, in physical space.
+#' @export
+#' @examples 
+#' # Make a coarse field with power-law Fourier spectrum 
+#' fa <- initmetagauss(1.7, 8)
+#' ra <- metagauss(fa)
+#' # Make a fine power-law Fourier spectrum
+#' f <- initmetagauss(1.7, 32)
+#' r <- metagauss(f)
+#' # Merge the two fields in spectral space
+#' rm <- mergespec(ra, r, kmax = 4)
+#' # Check spectral slope of the resulting field
+#' fx <- fft2d(rm)
+#' fitslope(fx)
+#' # 1.678554
+
+
 mergespec <- function(ra, r, kmax = 0) {
   nx <- dim(r)[1]
   nax <- dim(ra)[1]
@@ -13,6 +29,12 @@ mergespec <- function(ra, r, kmax = 0) {
   if (kmax == 0) {
     kmax <- nax2
   }
+
+  pstr <- fft2d(r) * (nx * nx) ^ 2
+  pstra <- fft2d(ra) * (nax * nax) ^ 2
+  c <- pstra[kmax] / pstr[kmax]
+  r <- r * sqrt(c)
+
   DFTf <- fft(r)
   DFTr <- fft(ra)
 

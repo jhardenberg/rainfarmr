@@ -3,13 +3,13 @@
 #' @description The input array is downscaled to finer resolution using the RainFARM 
 #' stochastic precipitation downscaling method.
 #' Orographic correction weights can be applied as described in 
-#' Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>.
+#' Terzago et al. (2018) \doi{10.5194/nhess-18-2825-2018}.
 #' Precipitation can be conserved globally (`fglob`), using convolution (`fsmooth`) or 
 #' over the original coarse-scale boxes. 
 #' @references Terzago, S. et al. (2018). NHESS 18(11), 2825–2840
-#' <doi:10.5194/nhess-18-2825-2018>;
-#' D'Onofrio et al. (2014). J of Hydrometeorology 15, 830-843 <doi:10.1175/JHM-D-13-096.1>;
-#' Rebora et. al. (2006), JHM 7, 724 <doi:10.1175/JHM517.1>.
+#' \doi{10.5194/nhess-18-2825-2018};
+#' D'Onofrio et al. (2014). J of Hydrometeorology 15, 830-843 \doi{10.1175/JHM-D-13-096.1};
+#' Rebora et. al. (2006), JHM 7, 724 \doi{10.1175/JHM517.1}.
 #' @author Jost von Hardenberg, \email{j.vonhardenberg@isac.cnr.it}
 #' @param r matrix or array with large-scale field to downscale. Can be a three-dimensional
 #' array with multiple frames at different times.

@@ -10,7 +10,13 @@
 #'  with dimensions `c(ns, ns)`.
 #' @export
 #' @examples
+#' # Make a synthetic rainfall field with prescribed logarithmic spectral slope
 #' f = initmetagauss(1.7, 64)
+#' r = metagauss(f)
+#' # Check slope of the resulting field
+#' fx <- fft2d(r)
+#' fitslope(fx)
+#' # 1.640373
 initmetagauss <- function(sx, ns) {
     sx <- abs(sx)
     kx <- rep(c(0:(ns / 2), (- ns / 2 + 1):-1), ns)

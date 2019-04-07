@@ -9,16 +9,16 @@
 #' logarithmic slope of k*|A(k)|^2 where A(k) are the spectral amplitudes of the input field.
 #' @export
 #' @examples
+#' # Make a synthetic rainfall field with prescribed logarithmic spectral slope
 #' f = initmetagauss(1.7, 64)
-#' z = metagauss(f)
-#' fx <- fft2d(z)
-#' sx <- fitslope(fx)
-#' print(sx)
+#' r = metagauss(f)
+#' # Check slope of the resulting field
+#' fx <- fft2d(r)
+#' print(fitslope(fx))
 #' # 1.640373
 fitslope <- function(fx, kmin = 1, kmax = length(fx)) {
   k <- 1:length(fx)
-  k <- k[kmin:length(k)]
-  rel <- lm(log(fx[kmin:length(k)]) ~ log(k))
+  rel <- lm(log(fx[kmin:kmax]) ~ log(k[kmin:kmax]))
   sx <- rel$coefficients[2]
   return(abs(sx) - 1)
 }
