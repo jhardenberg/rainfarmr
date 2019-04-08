@@ -3,9 +3,11 @@ Title: Stochastic Precipitation Downscaling with the RainFARM Method
 Version: 0.1
 Authors@R: person("Jost", "von Hardenberg", email = "j.vonhardenberg@isac.cnr.it",
                   role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-5312-8070"))
+URL: https://github.com/jhardenberg/rainfarmr
+BugReports: https://github.com/jhardenberg/rainfarmr
 Description: An implementation of the RainFARM (Rainfall Filtered Autoregressive Model) stochastic precipitation downscaling method (Rebora et al. (2006) <doi:10.1175/JHM517.1>). Adapted for climate downscaling according to D'Onofrio et al. (2018) <doi:10.1175/JHM-D-13-096.1> and for complex topography as in Terzago et al. (2018) <doi:10.5194/nhess-18-2825-2018>. The RainFARM method is based on the extrapolation to small scales of the Fourier spectrum of a large-scale precipitation field, using a fixed logarithmic slope and random phases at small scales, followed by a nonlinear transformation of the resulting linearly correlated stochastic field. RainFARM allows to generate ensembles of spatially downscaled precipitation fields which conserve precipitation at large scales and whose statistical properties are consistent with the small-scale statistics of observed precipitation, based only on knowledge of the large-scale precipitation field.
 Depends: R (>= 3.1.0)
-License: Apache License 2.0 | file LICENSE
+License: Apache License 2.0
 LazyData: true
 RoxygenNote: 6.1.1
 Roxygen: list(markdown = TRUE)
