@@ -16,19 +16,20 @@
 smoothconv <- function(z, nas) {
   imask <- !is.finite(z)
   z[imask] <- 0.
-  ns <- dim(z)[1]
+  nsx <- dim(z)[1]
+  nsy <- dim(z)[2]
 
-  sdim <- (ns / nas) / 2  # the smoothing sigma has width half a large pixel
-  mask <- matrix(0., ns, ns)
-  for (i in 1:ns) {
-    for (j in 1:ns) {
+  sdim <- (nsx / nas) / 2  # the smoothing sigma has width half a large pixel
+  mask <- matrix(0., nsx, nsy)
+  for (i in 1:nsx) {
+    for (j in 1:nsy) {
       kx <- i - 1
       ky <- j - 1
-      if (i > ns / 2 + 1) {
-        kx <- i - ns - 1
+      if (i > nsx / 2 + 1) {
+        kx <- i - nsx - 1
       }
-      if (j > ns / 2 + 1) {
-        ky <- j - ns - 1
+      if (j > nsy / 2 + 1) {
+        ky <- j - nsy - 1
       }
       r2 <- kx * kx + ky * ky
       mask[i, j] <- exp( - (r2 / (sdim * sdim)) / 2)
