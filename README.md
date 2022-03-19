@@ -1,5 +1,6 @@
 # rainfarmr
 ![RainFARM logo](https://raw.githubusercontent.com/jhardenberg/RainFARM.jl/master/docs/src/assets/logo-small.png)
+![stand with Ukraine](https://badgen.net/badge/stand%20with/UKRAINE/?color=0057B8&labelColor=FFD700)
 
 Stochastic precipitation downscaling with the RainFARM method.
 
