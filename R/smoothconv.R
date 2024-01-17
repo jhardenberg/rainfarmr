@@ -21,12 +21,12 @@ smoothconv <- function(z, nas) {
   sdim <- (ns / nas) / 2  # the smoothing sigma has width half a large pixel
   mask <- matrix(0., ns, ns)
   for (i in 1:ns) {
+    kx <- i - 1
+    if (i > ns / 2 + 1) {
+      kx <- i - ns - 1
+    }
     for (j in 1:ns) {
-      kx <- i - 1
       ky <- j - 1
-      if (i > ns / 2 + 1) {
-        kx <- i - ns - 1
-      }
       if (j > ns / 2 + 1) {
         ky <- j - ns - 1
       }
