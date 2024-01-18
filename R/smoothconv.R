@@ -20,20 +20,11 @@ smoothconv <- function(z, nas) {
 
   sdim <- (ns / nas) / 2  # the smoothing sigma has width half a large pixel
   mask <- matrix(0., ns, ns)
-  for (i in 1:ns) {
-    kx <- i - 1
-    if (i > ns / 2 + 1) {
-      kx <- i - ns - 1
-    }
-    for (j in 1:ns) {
-      ky <- j - 1
-      if (j > ns / 2 + 1) {
-        ky <- j - ns - 1
-      }
-      r2 <- kx * kx + ky * ky
-      mask[i, j] <- exp( - (r2 / (sdim * sdim)) / 2)
-    }
-  }
+  kx <- matrix(seq(0,ns-1), ns, ns)
+  kx[seq(1, ns)>ns/2+1, ] <- kx[seq(1, ns)>ns/2+1, ] - ns
+  ky <- t(kx)
+  r2 <- kx * kx + ky * ky
+  mask <- exp( - (r2 / (sdim * sdim)) / 2)
   fm <- fft(mask)
   zf <- Re(fft(fm * fft(z), inverse = TRUE)) / sum(mask) / length(fm)
   if (sum(imask) > 0) {
